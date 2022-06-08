@@ -22,8 +22,8 @@ def Chrome(headless=False):
     chrome_options.add_argument("--disable-dev-shm-usage")
     # chrome_options.add_argument("user-agent={}".format(
     #     fake_useragent.UserAgent().random))
-    # chrome_options.add_experimental_option(
-    #     'excludeSwitches', ['enable-logging'])
+    chrome_options.add_experimental_option(
+        'excludeSwitches', ['enable-logging'])
     chrome_options.add_argument("--disable-popup-blocking")
     driver = webdriver.Chrome(
         executable_path=r'i://clients/chromedriver.exe', options=chrome_options, desired_capabilities=d)
