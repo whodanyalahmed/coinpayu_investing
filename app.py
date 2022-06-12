@@ -136,13 +136,18 @@ def main():
                 print("info: Cant click the claim now button", e)
             while(True):
 
-                time.sleep(5)
+                time.sleep(12)
+                print("info: waiting for 10 second")
+                # scoll to the bottom of the page
+                driver.execute_script(
+                    "window.scrollTo(0, document.body.scrollHeight);")
                 if('claim' in driver.current_url):
 
                     try:
                         claim_now = driver.find_element_by_xpath(
                             '//*[contains(text(), "Claim now")]')
                         claim_now.click()
+                        print("info: Claimed")
                     except Exception as e:
                         print("info: Cant click the claim now button", e)
                     break
